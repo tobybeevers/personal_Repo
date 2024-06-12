@@ -1,0 +1,223 @@
+/*This is importing the Font called Play Regular 400 from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+:root {
+  --primary-color: #6096BA;
+  --secondary-color: #274C77;
+  --dark-color: #8B8C89; 
+  --light-color: #E7ECEF;
+}
+
+/* SET UP*/
+/* This is a reset that removes all the default padding/margins etc*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* FORMATTING & STYLES*/
+/* Setting the font, color and line height defaults*/
+body{
+  font-family: 'Play', sans-serif;
+  color: #000;
+  line-height: 1.6;
+}
+
+/*Removing the formating from the lists used in the menu bar (bullet points)*/
+ul{
+  list-style-type: none;
+}
+
+/* These are the links used in the menu bar, removing the Link Underlines and adding colour*/
+a {
+  text-decoration: none;
+  color: #1a7090;
+}
+
+h1 {
+  font-family: Play;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  margin: 10px 0;
+  color: var(--light-color);
+}
+
+h2 {
+  font-family: Play;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0px;
+  margin: 10px 0;
+  color: var(--light-color);
+}
+h3 {
+  font-family: Play;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0px;
+  margin: 10px 0;
+  color: var(--secondary-color);
+}
+h4 {
+  font-family: Play;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0px;
+  margin: 10px 0;
+  color: var(--secondary-color);
+  
+}
+p {
+  font-family: Play;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  margin: 10px 0;
+  color: var(--secondary-color);
+  
+}
+
+/* Setting the image width to 100% to allow them to take 100% of the container they will be added to */
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 2%;
+}
+
+/*NAV BAR*/
+/* Create various classes for NavBar to hold the formatting of the Navigation Bar across all pages*/
+.navbar {
+  background-color: var(--secondary-color);
+  color: #fff;
+  height: 70px;
+}
+.navbar ul {
+  display: flex;
+}
+.navbar a {
+  color: #fff;
+  font-size: 22px;
+  padding: 10px;
+  margin: 0 5px;   
+}
+.navbar a:hover {
+  border-bottom: 2px var(--primary-color) solid;
+}
+.navbar .flex {
+  justify-content: space-between;
+}
+
+/* SHOWCASE/HERO */
+.showcase{
+  height: 400px;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+.showcase h1{
+  font-size: 40px;
+}
+.showcase p {
+  margin: 20px 0;
+}
+.showcase .grid {
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+  overflow: visible;
+}
+.showcase-form {
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+}
+
+.showcase2{
+  height: 400px;
+  background-color: var(--light-color);
+  position: relative;
+}
+.showcase2 h1{
+  font-size: 40px;
+  color: var(--secondary-color);
+}
+.showcase2 h2{
+  color: var(--secondary-color);
+}
+.showcase2 p {
+  margin: 20px 0;
+}
+.showcase2 .grid {
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+  overflow: visible;
+}
+.showcase2-form {
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+}
+/* CLIs*/
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+/*TABLETS & UNDER*/
+@media(max-width: 768px){
+  .grid,
+  .showcase .grid,
+  .sponsors .grid,
+  .socials .grid,
+  .cli .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .showcase {
+    height: auto;
+  }
+  .showcase-text{
+    text-align: center;
+    margin-top: 40px;
+  }
+  .showcase-form {
+    justify-self: center;
+    margin: auto;
+  }
+  .cli .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media(max-width: 500px) {
+  .navbar .flex {
+    flex-direction: column;
+    align-items: left; /* Center items horizontally */
+  }
+  .navbar ul {
+    padding: 0; /* Remove padding */
+    background-color: var(--secondary-color); /* Match navbar background color */
+    width: 100%; /* Take full width */
+  }
+  .navbar a {
+    display: block; /* Make links take full width */
+    padding: 15px 15; /* Add vertical padding */
+    font-size: 14px; /* Decrease font size */
+    text-align: center; /* Center text */
+    margin: 0; /* Remove margin */
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Add a separator */
+  }
+  .navbar a:last-child {
+    border-bottom: none; /* Remove separator for last link */
+  }
+}
+
+
